@@ -1,8 +1,8 @@
-# 🌐 Intellectual Property Intelligence Scraper
+# Intellectual Property Intelligence Scraper
 
-> **Single query → USPTO + EPO + WIPO → normalized JSON → optional embeddings**
+**Single query → USPTO + EPO + WIPO → normalized JSON → optional embeddings**
 
-An [Apify Actor](https://apify.com/store) that solves fragmented patent data access for AI engineers, VCs, law firms, and R&D teams by providing unified, AI-ready patent JSON from three major jurisdictions in one run.
+A scraper that solves fragmented intellectual property data access for AI engineers, VCs, law firms, and R&D teams by providing unified, AI-ready patent JSON from three major jurisdictions in one run.
 
 ---
 
@@ -18,47 +18,6 @@ An [Apify Actor](https://apify.com/store) that solves fragmented patent data acc
 | **Retry Logic** | 3× retry with back-off per request |
 | **Deduplication** | Cross-jurisdiction dedup by patent ID |
 | **Memory Efficient** | Stream-pushes to Apify Dataset in batches |
-
----
-
-## 🚀 Quick Start
-
-### Option A — Run on Apify (no install)
-
-1. Go to [apify.com/store](https://apify.com/store) and search **global-ip-intelligence**
-2. Click **Try for free**
-3. Enter your query and hit **Start**
-
-### Option B — Local Development
-
-```bash
-# Prerequisites: Node 20+, Python 3.11+, pip
-
-git clone https://github.com/your-org/global-ip-scraper
-cd global-ip-scraper
-
-npm install
-pip install -r requirements.txt
-
-# Create input.json
-cat > storage/key_value_stores/default/INPUT.json << 'EOF'
-{
-  "queries": ["blockchain"],
-  "jurisdictions": ["US"],
-  "max_results": 20
-}
-EOF
-
-# Run locally
-npm run dev
-```
-
-### Option C — Docker
-
-```bash
-docker build -t global-ip-scraper .
-docker run -e APIFY_TOKEN=your_token global-ip-scraper
-```
 
 ---
 
