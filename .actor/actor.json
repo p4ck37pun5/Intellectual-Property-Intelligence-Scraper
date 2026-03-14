@@ -1,0 +1,7 @@
+{
+  "name": "intellectual-property-intelligence",
+  "version": "1.0.0",
+  "buildTag": "latest",
+  "env": null,
+  "template": "python3"
+}

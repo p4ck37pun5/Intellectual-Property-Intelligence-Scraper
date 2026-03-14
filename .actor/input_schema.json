@@ -1,0 +1,58 @@
+{
+  "title": "Intellectual Property Intelligence Scraper",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "queries": {
+      "title": "Search Queries",
+      "type": "array",
+      "description": "Keywords, company names, or IPC/CPC codes (e.g. 'quantum computing', 'Google AI', 'G06F')",
+      "editor": "stringList",
+      "default": ["blockchain"],
+      "example": ["quantum computing", "CRISPR gene editing"]
+    },
+    "jurisdictions": {
+      "title": "Jurisdictions",
+      "type": "array",
+      "description": "Patent databases to search",
+      "editor": "select",
+      "default": ["US", "EP"],
+      "items": {
+        "type": "string",
+        "enum": ["US", "EP", "WO"]
+      }
+    },
+    "date_from": {
+      "title": "Date From",
+      "type": "string",
+      "description": "Only return patents filed/published on or after this date (YYYY-MM-DD)",
+      "editor": "textfield",
+      "default": "2020-01-01",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "max_results": {
+      "title": "Max Results",
+      "type": "integer",
+      "description": "Maximum total patents to return (across all queries and jurisdictions)",
+      "editor": "number",
+      "default": 100,
+      "minimum": 1,
+      "maximum": 5000
+    },
+    "embeddings": {
+      "title": "Generate Embeddings",
+      "type": "boolean",
+      "description": "If enabled, each patent gets a 384-dimensional semantic embedding (all-MiniLM-L6-v2). Slows run by ~1min/1000 patents.",
+      "editor": "checkbox",
+      "default": false
+    },
+    "webhook_url": {
+      "title": "Webhook URL",
+      "type": "string",
+      "description": "Optional. A POST request with run summary is sent here on completion.",
+      "editor": "textfield",
+      "default": ""
+    }
+  },
+  "required": ["queries"]
+}

@@ -1,0 +1,8 @@
+{
+  "queries": ["blockchain", "quantum computing"],
+  "jurisdictions": ["US", "EP"],
+  "date_from": "2022-01-01",
+  "max_results": 20,
+  "embeddings": false,
+  "webhook_url": ""
+}

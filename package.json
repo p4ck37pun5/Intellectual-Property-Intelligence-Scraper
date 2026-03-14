@@ -1,0 +1,18 @@
+{
+  "name": "intellectual-property-intelligence-scraper",
+  "version": "1.0.0",
+  "description": "Retrieves unified IP data from USPTO, EPO, WIPO",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js",
+    "dev": "apify run"
+  },
+  "dependencies": {
+    "apify": "^3.2.2"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "author": "Isaac Muendo",
+  "license": "ISC"
+}
